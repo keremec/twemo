@@ -1,2 +1,0 @@
-# twemo
-Twitter Sentiment Analysis
