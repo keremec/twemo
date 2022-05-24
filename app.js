@@ -3,6 +3,8 @@ document.getElementById('button1').addEventListener('click', getJson);
 
 // Function to get json data from a local JSON file
 function getJson() {
+  document.getElementById('button1').innerHTML = "Loading";
+  document.getElementById('button1').style.pointerEvents = "none";
   input = document.getElementById("myText").value;
   input = input.trim();
   var n = input.lastIndexOf('/');
@@ -44,6 +46,8 @@ function getJson() {
           document.getElementById('tweet_label').style.borderColor="black";
           document.getElementById('outputdiv').style.boxShadow="0 0 10px black";
         }
+        document.getElementById('button1').innerHTML = "Get Emotion";
+        document.getElementById('button1').style.pointerEvents = "";
       })
       .catch(err => {
         console.log(err);
@@ -53,29 +57,9 @@ function getJson() {
         document.getElementById('tweet_label').style.display="none";
         document.getElementById('errordiv').style.display="block";
         document.getElementById('errordiv').innerHTML = err;
+        document.getElementById('button1').innerHTML = "Get Emotion";
+        document.getElementById('button1').style.pointerEvents = "";
 
 
       });
-}
-
-// Add an event listener to button2
-document.getElementById('button2').addEventListener('click', getDataFromExternalAPI);
-
-// Function to get the data from an external API
-function getDataFromExternalAPI() {
-  fetch('https://tweetemotion.herokuapp.com/tweet/1527942626573537281', {mode: 'cors'})
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        // Displaying to the UI
-        let output = data.tweet_id;
-        document.getElementById('output').innerHTML = output;
-      })
-      .catch(err => {
-        console.log(err);
-
-        // Displaying to the UI
-        document.getElementById('output').innerHTML = err;
-      });
-
 }
