@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
-  <title>TweetEmotion</title>
-</head>
-<body>
-  <div class="container">
-    <br><br>
-    <input type="text" class="u-full-width" id="myText">
-    <br>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+    />
+    <title>TweetEmotion</title>
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <input
+        type="text"
+        class="u-full-width"
+        placeholder="Tweet URL or ID"
+        id="myText"
+      />
+      <br />
 
-    <!-- This will fetch data from JSON file -->
-    <button id="button1" class="u-full-width">Get Emotion</button>
-    <br><br>
+      <!-- This will fetch data from JSON file -->
+      <button id="button1" class="u-full-width">Get Emotion</button>
+      <br /><br />
 
-    <div id="errordiv" style="   
-    padding: 5px; 
-    border: none;
-    border-radius: 2pt;
-    box-shadow: 0 0 0 1pt orange;
-    outline: none;
-    transition: .1s;
-    display: none">>
+      <div
+        id="errordiv"
+        style="
+          padding: 5px;
+          border: none;
+          border-radius: 2pt;
+          box-shadow: 0 0 0 1pt orange;
+          outline: none;
+          transition: 0.1s;
+          display: none;
+        "
+      >
+        >
+      </div>
 
+      <div
+        id="outputdiv"
+        style="
+          padding: 5px;
+          border: none;
+          border-radius: 2pt;
+          box-shadow: 0 0 0 1pt #33c3f0;
+          outline: none;
+          transition: 0.1s;
+          display: none;
+        "
+      >
+        <p id="tweet_text" style="padding: 3px"></p>
+        <br />
+        <button
+          id="tweet_label"
+          style="display: none; margin-left: auto; margin-right: 3px"
+        ></button>
+      </div>
     </div>
 
-    <div id="outputdiv" style="   
-padding: 5px; 
-border: none;
-border-radius: 2pt;
-box-shadow: 0 0 0 1pt #33C3F0;
-outline: none;
-transition: .1s;
-display: none">
-    <p id="tweet_text" style="padding: 3px;"></p>
-    <br/>
-      <button id="tweet_label" style="display: none;  margin-left:auto; margin-right: 3px;"></button> 
-  </div>
-
-  </div>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
+  <footer
+    id="tweet_footer"
+    style="
+      display: table;
+      position: relative;
+      bottom: 0px;
+      text-align: center;
+      width: 100%;
+    "
+  >
+    <br />
+    <p><a style="color: #555555" href="./stat.html">Tag Classification</a></p>
+  </footer>
 </html>
