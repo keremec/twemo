@@ -4,7 +4,7 @@
 - Tweet Classification
 - Tag - Topic Classification and Analysis
 
-## Wep Page
+## Web Page
 ### https://keremec.github.io/twemo/
 
 ## API
